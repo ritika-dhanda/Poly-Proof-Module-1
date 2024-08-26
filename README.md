@@ -30,19 +30,19 @@ pragma solidity ^0.8.18;
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract FuturisticCarNFT is ERC721A, Ownable {
+contract helloNFT is ERC721A, Ownable {
     uint256 public totalMinted;
     mapping(uint256 => string) private _nftMetadata;
     mapping(uint256 => string) private _nftPrompts;
 
     // Constructor initializing the NFT collection with a name and symbol
-    constructor() ERC721A("FuturisticCar", "FCAR") Ownable(msg.sender) {
+    constructor() ERC721A("hello", "hlo") Ownable(msg.sender) {
         totalMinted = 0;
     }
 
     // Function to batch mint NFTs with corresponding metadata and prompts
-    function mintNFT(string[] memory metadataURIs, string[] memory descriptions) external onlyOwner {
-        require(metadataURIs.length == descriptions.length, "Arrays must have the same length");
+    function mintMultipleNFTs(string[] memory metadataURIs, string[] memory descriptions) external onlyOwner {
+        require(metadataURIs.length == descriptions.length, "Arrays have the same length");
 
         uint256 startId = totalMinted;
         uint256 numOfNFTs = metadataURIs.length;
