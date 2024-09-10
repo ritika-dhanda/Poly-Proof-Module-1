@@ -6,6 +6,11 @@ This repository contains the implementation of a bridging of NFT collection on t
 
 This project involves creating and deploying an NFT collection on the Ethereum Sepolia testnet, mapping it to the Polygon Amoy testnet, and transferring the assets using the Polygon Bridge. The NFTs will be generated using DALLE 2 or Midjourney, stored on IPFS, and then minted and transferred using smart contracts and Hardhat scripts.
 
+## Video Tutorial
+
+For a detailed walkthrough of the code and how the project works, check out the [Loom video](https://www.loom.com/share/5e5352fda8224fd0888c58e9fce56eb6?sid=61aab41a-8682-420c-9c02-16ee5be1e567).
+
+
 ## Prerequisites
 
 - [MetaMask](https://metamask.io/) installed in your browser
