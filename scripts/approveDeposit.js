@@ -1,12 +1,12 @@
 const hre = require("hardhat");
 const fxRootContractABI = require("../fxRootContractABI.json");
-const tokenContractJSON = require("../artifacts/contracts/helloNFT.sol/helloNFT.json");
+const tokenContractJSON = require("../artifacts/contracts/Ritika.sol/Ritika.json");
 
 const NUMBER_OF_TOKENS = 5; 
-const tokenAddress = "0x4Fc026C3Eb0Ba37E83BDC9449A4c1F99BC5e666C"; 
+const tokenAddress = "0xFA52C5FC1717C639DB72b58a3e6C007376d191A7"; 
 const tokenABI = tokenContractJSON.abi;
 const fxERC721RootTunnel = "0x9E688939Cb5d484e401933D850207D6750852053"; 
-const walletAddress = "0x71Ab164136688cF0b694c854e24297550E3a3467";
+const walletAddress = "0x7c76e4bc59a18fff2391d2bf32bc3a2fe833b910";
 
 async function main() {
   const [deployer] = await hre.ethers.getSigners();

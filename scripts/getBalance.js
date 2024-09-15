@@ -1,9 +1,10 @@
 const hre = require("hardhat");
-const tokenContractJSON = require("../artifacts/contracts/helloNFT.sol/helloNFT.json");
+const tokenContractJSON = require("../artifacts/contracts/Ritika.sol/Ritika.json");
 
-const tokenAddress = "0x158c990E9E84d15a6A4B657f852bc55f30297239"; 
+const tokenAddress = "0x16bFe7a1602D1d0C95355471a15A05DE1F21A430"; 
+//got from scan
 const tokenABI = tokenContractJSON.abi;
-const walletAddress = "0x71Ab164136688cF0b694c854e24297550E3a3467";
+const walletAddress = "0x7C76E4bc59A18fFF2391d2bf32bC3A2fe833b910";
 
 async function main() {
     // Get the contract instance

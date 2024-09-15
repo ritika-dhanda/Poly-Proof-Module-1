@@ -8,7 +8,7 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const token = await hre.ethers.deployContract("helloNFT");
+  const token = await hre.ethers.deployContract("Ritika");
 
   console.log("Token address:", await token.getAddress());
 }

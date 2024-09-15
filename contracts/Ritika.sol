@@ -4,13 +4,13 @@ pragma solidity ^0.8.18;
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract helloNFT is ERC721A, Ownable {
+contract Ritika is ERC721A, Ownable {
     uint256 public totalMinted;
     mapping(uint256 => string) private _nftMetadata;
     mapping(uint256 => string) private _nftPrompts;
 
     // Constructor initializing the NFT collection with a name and symbol
-    constructor() ERC721A("hello", "hlo") Ownable(msg.sender) {
+    constructor() ERC721A("ritika", "rtk") Ownable(msg.sender) {
         totalMinted = 0;
     }
 
