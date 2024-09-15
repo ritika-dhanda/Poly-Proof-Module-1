@@ -6,10 +6,6 @@ This repository contains the implementation of a bridging of NFT collection on t
 
 This project involves creating and deploying an NFT collection on the Ethereum Sepolia testnet, mapping it to the Polygon Amoy testnet, and transferring the assets using the Polygon Bridge. The NFTs will be generated using DALLE 2 or Midjourney, stored on IPFS, and then minted and transferred using smart contracts and Hardhat scripts.
 
-## Video Tutorial
-
-For a detailed walkthrough of the code and how the project works, check out the [Loom video](https://www.loom.com/share/5e5352fda8224fd0888c58e9fce56eb6?sid=61aab41a-8682-420c-9c02-16ee5be1e567).
-
 
 ## Prerequisites
 
@@ -27,57 +23,6 @@ For a detailed walkthrough of the code and how the project works, check out the 
 2. Create a new file by clicking on the "+" icon in the left-hand sidebar.
 3. Clone this repository.
 4. Write and Deploy an ERC721 or ERC1155. 
-
-```
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.18;
-
-import "erc721a/contracts/ERC721A.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-
-contract helloNFT is ERC721A, Ownable {
-    uint256 public totalMinted;
-    mapping(uint256 => string) private _nftMetadata;
-    mapping(uint256 => string) private _nftPrompts;
-
-    // Constructor initializing the NFT collection with a name and symbol
-    constructor() ERC721A("hello", "hlo") Ownable(msg.sender) {
-        totalMinted = 0;
-    }
-
-    // Function to batch mint NFTs with corresponding metadata and prompts
-    function mintMultipleNFTs(string[] memory metadataURIs, string[] memory descriptions) external onlyOwner {
-        require(metadataURIs.length == descriptions.length, "Arrays have the same length");
-
-        uint256 startId = totalMinted;
-        uint256 numOfNFTs = metadataURIs.length;
-
-        // Mint the specified number of NFTs to the contract owner
-        _safeMint(owner(), numOfNFTs);
-
-        // Assign metadata and prompts to each newly minted NFT
-        for (uint256 i = 0; i < numOfNFTs; i++) {
-            _nftMetadata[startId + i] = metadataURIs[i];
-            _nftPrompts[startId + i] = descriptions[i];
-        }
-
-        totalMinted += numOfNFTs;
-    }
-    
-    // Function to return the prompt description of a given token ID
-    function promptDescription(uint256 tokenId) external view returns (string memory) {
-        require(_exists(tokenId), "Prompt query for nonexistent token");
-        return _nftPrompts[tokenId];
-    }
-
-    // Override function to return the metadata URI of a given token ID
-    function tokenURI(uint256 tokenId) public view override returns (string memory) {
-        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-        return _nftMetadata[tokenId];
-    }    
-}
-;
-```
 
 ## Installing
 * Fork this repository and the clone it to there local system. 
@@ -147,18 +92,9 @@ npx hardhat run scripts/getBalance.js --network amoy
 2. Search for your contract address.
 3. Complete the verification.
 
-## Help
-
-* Note: you need some faucet balance on your network for that Links are given below.
-  * Sepolia Faucet: https://cloud.google.com/application/web3/faucet/ethereum/sepolia
-  * Amoy Faucet: https://faucet.polygon.technology/ (Joining Polygon Discord is required)
-```
-npx hardhat help
-```
-
 ## Authors
 
-Mannat Gupta
+Ritika Dhanda
 
 ## License
 
